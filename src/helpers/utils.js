@@ -138,8 +138,8 @@ export function correctBounds(layout: Layout, bounds: {cols: number}): Layout {
     const l = layout[i];
     // Overflows right
     if (l.x + l.w > bounds.cols) {
-      l.x = l.x - bounds.cols;
-      l.y++;
+      l.x = Math.min(l.x - bounds.cols, l.x % bounds.cols);
+      l.y = l.y + Math.floor(l.y / bounds.cols);
     }
     // Overflows left
     if (l.x < 0) {
