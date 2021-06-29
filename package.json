@@ -1,6 +1,6 @@
 {
-  "name": "vue-grid-layout",
-  "version": "2.3.12",
+  "name": "@polar-media/vue-grid-layout",
+  "version": "2.3.12-patched.2",
   "description": "A draggable and resizable grid layout, as a Vue component.",
   "keywords": [
     "grid",
@@ -23,18 +23,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "rimraf dist && vue-cli-service build",
-    "build-lib": "rimraf dist && vue-cli-service build --target lib ./src/components/index.js",
+    "build-lib": "rimraf dist && vue-cli-service build --target lib --name vue-grid-layout ./src/components/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:cover": "vue-cli-service test:unit --coverage"
   },
   "dependencies": {
-    "element-resize-detector": "^1.2.1",
-    "@interactjs/interactjs": "^1.10.2",
-    "@interactjs/auto-start": "^1.10.2",
     "@interactjs/actions": "^1.10.2",
+    "@interactjs/auto-start": "^1.10.2",
+    "@interactjs/dev-tools": "^1.10.2",
+    "@interactjs/interactjs": "^1.10.2",
     "@interactjs/modifiers": "^1.10.2",
-    "@interactjs/dev-tools": "^1.10.2"
+    "element-resize-detector": "^1.2.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",
