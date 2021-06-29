@@ -137,7 +137,10 @@ export function correctBounds(layout: Layout, bounds: {cols: number}): Layout {
   for (let i = 0, len = layout.length; i < len; i++) {
     const l = layout[i];
     // Overflows right
-    if (l.x + l.w > bounds.cols) l.x = bounds.cols - l.w;
+    if (l.x + l.w > bounds.cols) {
+      l.x = l.x - bounds.cols;
+      l.y++;
+    }
     // Overflows left
     if (l.x < 0) {
       l.x = 0;
